@@ -2,9 +2,9 @@ using Shouldly;
 
 namespace FabQuack.TreeLib.Tests
 {
-    public class ImmutableKeydTreeTests
+    public class ImmutableKeyedTreeTests
     {
-        public ImmutableKeydTreeTests()
+        public ImmutableKeyedTreeTests()
         {
             var items = new[]
             {

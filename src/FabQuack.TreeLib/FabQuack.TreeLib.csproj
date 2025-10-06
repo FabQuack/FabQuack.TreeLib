@@ -8,6 +8,7 @@
     <RepositoryUrl>https://github.com/FabQuack/FabQuack.TreeLib</RepositoryUrl>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<NoWarn>1701;1702;1591</NoWarn>
+	<Authors>Rich Quackenbush</Authors>
   </PropertyGroup>
 
  
