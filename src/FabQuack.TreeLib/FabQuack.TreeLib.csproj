@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageProjectUrl>https://github.com/FabQuack/FabQuack.TreeLib</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/FabQuack/FabQuack.TreeLib</RepositoryUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+ 
+
+</Project>
