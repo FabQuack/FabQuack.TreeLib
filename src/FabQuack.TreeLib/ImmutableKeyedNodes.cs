@@ -17,7 +17,7 @@ public class ImmutableKeyedNodes<TKey, TValue> : IImmutableList<ImmutableKeyedNo
         Parent = parent;
     }
 
-    public static ImmutableKeyedNodes<TKey, TValue> Empty() => new ImmutableKeyedNodes<TKey, TValue>(null, []);
+    public static ImmutableKeyedNodes<TKey, TValue> Empty() => new(null, []);
 
     public ImmutableKeyedNode<TKey, TValue> this[int index] => _items[index];
 

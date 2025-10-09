@@ -9,6 +9,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<NoWarn>1701;1702;1591</NoWarn>
 	<Authors>Rich Quackenbush</Authors>
+	<Description>A set of tree implementations to make working with hieararchical data structures easier.</Description>
   </PropertyGroup>
 
  

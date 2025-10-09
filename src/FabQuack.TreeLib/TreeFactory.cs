@@ -10,11 +10,13 @@ public static class TreeFactory
     /// <typeparam name="TKey">The type of key. These must be unique throughout the entire tree.</typeparam>
     /// <typeparam name="TValue">The type of object to store in the tree.</typeparam>
     /// <param name="items">The key value pairs to use.</param>
+    /// <param name="hasParentKey"></param>
     /// <param name="getParentKey">The function which gets the parent key from each item in <paramref name="items"/>.</param>
     /// <returns></returns>
     public static ImmutableKeyedTree<TKey, TValue> ToImmutableKeyedTree<TKey, TValue>(
         this IEnumerable<KeyValuePair<TKey, TValue>> items,
-        Func<KeyValuePair<TKey, TValue>, TKey?> getParentKey)
+        Func<KeyValuePair<TKey, TValue>, bool> hasParentKey,
+        Func<KeyValuePair<TKey, TValue>, TKey> getParentKey)
         where TKey : notnull
     {
         var rootItems = new List<KeyValuePair<TKey, TValue>>();
@@ -25,17 +27,17 @@ public static class TreeFactory
 
         foreach (var item in items)
         {
-            var parentKey = getParentKey(item);
-
-            if (parentKey == null)
+            if (hasParentKey(item))
             {
-                rootItems.Add(item);
+                var parentKey = getParentKey(item);
+
+                var byParentList = byParent.GetOrAdd(parentKey, key => []);
+
+                byParentList.Add(item);
             }
             else
             {
-                var byParentList = byParent.GetOrAdd(parentKey, key => new List<KeyValuePair<TKey, TValue>>());
-
-                byParentList.Add(item);
+                rootItems.Add(item);
             }
         }
 

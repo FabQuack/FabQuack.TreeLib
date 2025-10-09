@@ -10,7 +10,7 @@ public static class TreeExtensions
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <param name="node"></param>
-    /// <param name="inclusive">True to include <paramref name="node"/> in the result, false otherwise.
+    /// <param name="inclusive">True to include <paramref name="node"/> in the result, false otherwise.</param>
     /// <returns></returns>
     public static ImmutableList<TKey> GetPath<TKey, TValue>(this ImmutableKeyedNode<TKey, TValue> node, bool inclusive)
        where TKey : notnull
